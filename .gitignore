@@ -1,0 +1,8 @@
+/video_test
+**/__pycache__
+/output_folder
+*.mp4
+*.jpg
+*.png
+*.JPG
+*.PNG
