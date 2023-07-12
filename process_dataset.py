@@ -39,22 +39,9 @@ def make_yolo_data(json_path):
                     height /= h
                     txt_file.write(f'{class_mappping[annotation["category_id"]]} {x_center} {y_center} {width} {height}\n')
 
-def remake_class():
-    folder = '/home/tanpv/fiftyone/coco-2017/train/labels'
-    txt_files = glob(os.path.join(folder, '*.txt'))
-    classes = []
-    for txt_file in txt_files:
-        with open(txt_file, 'r') as f:
-            lines = f.readlines()
-            for line in lines:
-                class_id = line.split(' ')[0]
-                if class_id not in classes:
-                    classes.append(class_id)
-    print(classes)
-
 if __name__ == "__main__":
     json_paths = ['/home/tanpv/fiftyone/coco-2017/train/labels.json',
                   '/home/tanpv/fiftyone/coco-2017/validation/labels.json',]
     for json_path in json_paths:
         make_yolo_data(json_path)
-    # remake_class()
+ 

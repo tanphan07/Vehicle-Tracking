@@ -42,7 +42,7 @@ def letterbox(im, new_shape=(640, 640), color=(114, 114, 114), auto=True, scaleF
 
 
 class TensorRtPredictor:
-    def __init__(self, engine_path='/home/tanpv/PythonVSCode/VehicleTracking/ultralytics/runs/detect/train/weights/best.engine',
+    def __init__(self, engine_path='checkpoints/best.engine',
                   img_size=(640, 640), conf_thres=0.35, iou_thres=0.45, classes=None, agnostic_nms=False, maxdet=1000):
         device = torch.device('cuda:0')
         Binding = namedtuple('Binding', ('name', 'dtype', 'shape', 'data', 'ptr'))
@@ -129,10 +129,10 @@ def main_video():
     import shutil
     from tqdm import tqdm
     output_folder = 'output_folder'
-    w = '/home/tanpv/PythonVSCode/VehicleTracking/ultralytics/runs/detect/train/weights/best.engine'
+    w = 'checkpoints/best.engine'
     predictor = TensorRtPredictor(w)
 
-    video_path = '/home/tanpv/PythonVSCode/VehicleTracking/video_test/car_video.mp4'
+    video_path = 'video_test/car_video.mp4'
     out_video_path = os.path.join(output_folder, os.path.basename(video_path))
     cap = cv2.VideoCapture(video_path)
 
@@ -168,7 +168,7 @@ def main_paths():
     import shutil
     from tqdm import tqdm
     output_folder = 'output_folder'
-    w = '/home/tanpv/PythonVSCode/VehicleTracking/ultralytics/runs/detect/train/weights/best.engine'
+    w = 'checkpoints/best.engine'
     predictor = TensorRtPredictor(w)
 
     img_pths = glob('/home/tanpv/fiftyone/coco-2017/validation/images/*')
