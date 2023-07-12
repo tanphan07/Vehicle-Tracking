@@ -29,7 +29,7 @@ python3 download_dataset.py
 After downloading the dataset, you need to convert the dataset to YOLO format. You can use `prepare_dataset.py` file to convert the dataset to YOLO format (change the path to your dataset path).
 
 ## Training
-In this project, I have used YOLOv8 to train the model. You can follow the instruction in [this](https://github.com/ultralytics/ultralytics) to train the model. After training, you will get the weight file in `runs/train/exp/weights/best.pt`. For the better performance, I used TensorRT to optimize the model. You can convert the weight file to TensorRT engine following the instruction in YOLOv8 repository. I have train a model and convert it to TensorRT engine. You can download the engine get the weight file in `checkpoints/best.engine`
+In this project, I have used YOLOv8 to train the model. You can follow the instruction in [this](https://github.com/ultralytics/ultralytics) to train the model. After training, you will get the weight file in `runs/train/exp/weights/best.pt`. For the better performance, I used TensorRT to optimize the model. You can convert the weight file to TensorRT engine following the instruction in YOLOv8 repository. I have train a model and convert it to TensorRT engine. You can download the engine [here](https://drive.google.com/drive/u/0/folders/1otvyp9atEXNSgFZwhz2HhxBu-2xXXALB).
 
 
 ## Tracking
